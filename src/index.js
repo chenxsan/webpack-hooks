@@ -35,6 +35,12 @@ class WebpackPluginHooks {
             })
           } catch (err) {
             // additionalchunkassets, etc.
+            hook.tap(PluginName, () => {
+              console.log(
+                chalk.bgCyan('compilation.hooks'.padStart(padding)),
+                key
+              )
+            })
           }
         }
       })
